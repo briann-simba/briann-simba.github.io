@@ -33,14 +33,19 @@ export default function HeroSection() {
           </div> */}
           </motion.div>
 
+         {/* Profile Image in Circular Frame */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center"
           >
-            <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-2xl border-8 border-white">
-              <div className="text-8xl font-bold text-primary">B</div>
+            <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 shadow-2xl border-8 border-white overflow-hidden flex items-center justify-center">
+              <img
+                src="/attached_assets/athanas.jpg"
+                alt="Brian Athanas Orori"
+                className="object-cover w-full h-full rounded-full"
+              />
             </div>
           </motion.div>
         </div>
