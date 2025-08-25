@@ -100,7 +100,7 @@ export default function ContactSection() {
             <h3 className="text-xl font-semibold mb-6">Follow Me</h3>
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com/in/brian-simba-293681198" 
+                href="https://www.linkedin.com/in/brian-simba-293681198/" 
                 className="bg-slate-700 hover:bg-primary rounded-full p-3 transition-colors duration-300"
                 data-testid="social-linkedin"
               >
