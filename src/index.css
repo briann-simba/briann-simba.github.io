@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210 20% 98%);
+  --foreground: hsl(222.2 84% 4.9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222.2 84% 4.9%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222.2 84% 4.9%);
+  --primary: hsl(221.2 83.2% 53.3%);
+  --primary-foreground: hsl(210 40% 98%);
+  --secondary: hsl(210 40% 96%);
+  --secondary-foreground: hsl(222.2 84% 4.9%);
+  --muted: hsl(210 40% 96%);
+  --muted-foreground: hsl(215.4 16.3% 46.9%);
+  --accent: hsl(42.1 92.8% 53.7%);
+  --accent-foreground: hsl(222.2 84% 4.9%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(214.3 31.8% 91.4%);
+  --input: hsl(214.3 31.8% 91.4%);
+  --ring: hsl(221.2 83.2% 53.3%);
+  --chart-1: hsl(12 76% 61%);
+  --chart-2: hsl(173 58% 39%);
+  --chart-3: hsl(197 37% 24%);
+  --chart-4: hsl(43 74% 66%);
+  --chart-5: hsl(27 87% 67%);
+  --radius: 0.75rem;
+  
+  /* Portfolio specific colors */
+  --primary-blue: hsl(221.2 83.2% 53.3%);
+  --secondary-gray: hsl(215.4 16.3% 46.9%);
+  --accent-yellow: hsl(42.1 92.8% 53.7%);
+  --slate-50: hsl(210 40% 98%);
+  --slate-100: hsl(210 40% 96%);
+  --slate-200: hsl(214.3 31.8% 91.4%);
+  --slate-300: hsl(212.7 26.8% 83.9%);
+  --slate-600: hsl(215.4 16.3% 46.9%);
+  --slate-700: hsl(215.3 25% 26.7%);
+  --slate-800: hsl(217.2 32.6% 17.5%);
+  --slate-900: hsl(222.2 84% 4.9%);
+}
+
+.dark {
+  --background: hsl(222.2 84% 4.9%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(222.2 84% 4.9%);
+  --card-foreground: hsl(210 40% 98%);
+  --popover: hsl(222.2 84% 4.9%);
+  --popover-foreground: hsl(210 40% 98%);
+  --primary: hsl(217.2 91.2% 59.8%);
+  --primary-foreground: hsl(222.2 84% 4.9%);
+  --secondary: hsl(217.2 32.6% 17.5%);
+  --secondary-foreground: hsl(210 40% 98%);
+  --muted: hsl(217.2 32.6% 17.5%);
+  --muted-foreground: hsl(215 20.2% 65.1%);
+  --accent: hsl(217.2 32.6% 17.5%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(217.2 32.6% 17.5%);
+  --input: hsl(217.2 32.6% 17.5%);
+  --ring: hsl(224.3 76.3% 94.1%);
+  --chart-1: hsl(220 70% 50%);
+  --chart-2: hsl(160 60% 45%);
+  --chart-3: hsl(30 80% 55%);
+  --chart-4: hsl(280 65% 60%);
+  --chart-5: hsl(340 75% 55%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+  
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .text-primary {
+    color: var(--primary-blue);
+  }
+  
+  .text-secondary {
+    color: var(--secondary-gray);
+  }
+  
+  .text-accent {
+    color: var(--accent-yellow);
+  }
+  
+  .bg-primary {
+    background-color: var(--primary-blue);
+  }
+  
+  .bg-accent {
+    background-color: var(--accent-yellow);
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--primary-blue), var(--secondary-gray));
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(30px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    transform: scale(0.95); 
+    opacity: 0; 
+  }
+  to { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+/* Prevent horizontal overflow and smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Ensure all containers respect viewport width */
+* {
+  box-sizing: border-box;
+}
+
+/* Fix any potential overflow issues */
+.max-w-7xl {
+  max-width: min(80rem, calc(100vw - 2rem));
+}
+
+/* Ensure images and other content don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent text overflow on small screens */
+h1, h2, h3, h4, h5, h6 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix grid layouts on mobile */
+.grid {
+  width: 100%;
+}
+
+/* Ensure flex containers don't overflow */
+.flex {
+  flex-wrap: wrap;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  /* Ensure proper padding on mobile */
+  .px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Fix any large text that might overflow */
+  .text-4xl, .text-6xl {
+    font-size: clamp(2rem, 8vw, 4rem) !important;
+  }
+  
+  /* Ensure buttons fit on mobile */
+  .flex.flex-wrap.gap-4 {
+    justify-content: center;
+  }
+  
+  /* Fix grid layouts */
+  .grid.lg\\:grid-cols-2, .grid.md\\:grid-cols-2, .grid.lg\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Ensure mobile nav buttons are properly clickable */
+  button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    touch-action: manipulation;
+    min-height: 44px; /* iOS recommended touch target size */
+  }
+  
+  /* Prevent zoom on mobile inputs/buttons */
+  button, input, select, textarea {
+    font-size: 16px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(210 40% 96%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(221.2 83.2% 45%);
+}
