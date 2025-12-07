@@ -5,7 +5,7 @@ const experiences = [
   {
     title: "Infrastructure and Applications Support Assistant",
     company: "Kim-Fay E.A Limited",
-    period: "March 2025 - Present",
+    period: "March 2025 - October 2025",
     description:
       "Developing internal web applications for process automation, supporting enterprise systems like MyQ and 3CX, administering Active Directory and Microsoft 365 platforms, implementing firewall rules and network optimization.",
     technologies: ["Laravel", "C#", "Active Directory", "Microsoft 365"],
